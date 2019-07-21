@@ -1,2 +1,3 @@
 # CTF_Writeup
-Writeups collection of CTF competition
+
+This is the collection of challenges solved by me during the CTF competitions played with my team (BullSoc)
