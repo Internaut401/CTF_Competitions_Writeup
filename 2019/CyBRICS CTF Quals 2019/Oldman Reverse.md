@@ -3,7 +3,7 @@
 
 visiting the link, the result is:
 
-![Oldman_Reverse_1](https://github.com/Apollo3000/CTF_Writeup/blob/master/2019/CyBRICS%20CTF%20Quals%202019/img/Oldman_Reverse_1.png)
+![Oldman_Reverse_1](img/Oldman_Reverse_1.png)
 
 It's assembly code, so first we need to discover the architecture and related instruction set. A Google search reveals the architecture is MACRO-11, so with the [ISA](www.dmv.net/dec/pdf/macro.pdf) we can understand what the code does and rewrite the program in Python :
 
