@@ -10,5 +10,5 @@ Googling 'Mata Nui', we discover that it is a reference to the universe of bioni
 
 Using the given alphabetical table we can translate the flag
 
-#FLAG
+# FLAG
 X-MAS{MATANUIHASPREPAREDTHECOOKIES}
