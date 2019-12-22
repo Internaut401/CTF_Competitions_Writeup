@@ -1,4 +1,4 @@
-![SN0WVERFL0W](/src/SN0WVERFL0W .png)
+![SN0WVERFL0W](src/SN0WVERFL0W%20.png)
 
 first we run chacksec and files:
 ```shell
