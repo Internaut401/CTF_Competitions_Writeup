@@ -1,10 +1,10 @@
-![Santa's crackme intro](/src/Santa's crackme intro.png)
+![Santa's crackme intro](src/Santa's_crackme_intro.png)
 
 We have to reverse the binary. Decompiled code:
-![Santa's crackme decompiled](/src/Santa's crackme decompiled.png)
+![Santa's crackme decompiled](src/Santa's_crackme_decompiled.png)
 
-The program basically XOR our input with number 3 and then compare the result with 'flag_matrix' wich is:
-![Santa's crackme string](/src/Santa's crackme string.png)
+The program basically XOR our input with number 3 and then compare the result with 'flag_matrix' which is:
+![Santa's crackme string](src/Santa's_crackme_string.png)
 
 The XOR has the commutative property:
 
