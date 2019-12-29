@@ -25,8 +25,12 @@ First check if the characters, even and odd, are between a set of characters and
 
 //check_password_characters screen
 
-//set of characters even and odd
-
+set of characters even and odd:
+```asm
+.data:0000000000404070 aAdgjlqetuozcbm db 'ADGJLQETUOZCBM10',0 ; DATA XREF: check_password_0+55↑o   //even
+.data:0000000000404081                 align 10h
+.data:0000000000404090 aSfhkwryipxvn52 db 'sfhkwryipxvn5238',0 ; DATA XREF: check_password_0+7C↑o   //odd
+```
 then it call *`binary_number_generator`* to generate 4 bits from the even character index and 4 from the odd. Then combine them together and generate a character of the returning string (which must correspond to a username character).
 
 *`binary_number_generator`*:
