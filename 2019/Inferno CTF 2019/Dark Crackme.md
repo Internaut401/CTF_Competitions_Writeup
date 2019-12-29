@@ -5,25 +5,25 @@ NOTE: Functions and variables have been renamed by me.
 
 main:
 
-//main screen
+![main](src/Dark_Crackme_main.png)
 
 The main takes a username and a password. Then it checks if the username is: *`1_4m_th3_wh1t3r0s3`*.
-After that, it call *`check_credentials`*, and if the function return 1, it print the flag (which is the password).
+After that, it calls *`check_credentials`*, and if the function returns 1, it prints the flag (which is the password).
 
 check_credentials:
 
-//check_credentials screen
+![check_credentials](src/Dark_Crackme_check_credentials.png)
 
-The function do some check about the leght of username and password. 
+The function does some check about the leght of the username and password. 
 Knowing the username, we discover that the password is 36 characters long.
-Then the function call *`check_password_0`*
+Then the function calls *`check_password_0`*
 
-//check_password_0 screen
+![check_password_0](src/Dark_Crackme_check_password_0.png)
 
-The function check the password 2 caracters at time with a cycle.
-First check if the characters, even and odd, are between a set of characters and get the position with function *`check_password_characters`*
+The function checks the password 2 caracters at a time with a cycle.
+First checks if the characters, even and odd, are between a set of characters and gets the position with function *`check_password_characters`*
 
-//check_password_characters screen
+![check_password_characters](src/Dark_Crackme_check_password_characters.png)
 
 set of characters even and odd:
 ```asm
@@ -31,15 +31,22 @@ set of characters even and odd:
 .data:0000000000404081                 align 10h
 .data:0000000000404090 aSfhkwryipxvn52 db 'sfhkwryipxvn5238',0 ; DATA XREF: check_password_0+7C↑o   //odd
 ```
-then it call *`binary_number_generator`* to generate 4 bits from the even character index and 4 from the odd. Then combine them together and generate a character of the returning string (which must correspond to a username character).
+then it calls *`binary_number_generator`* to generate 4 bits from the even character index and 4 from the odd. Then combines them together and generates a character of the returning string (which must corresponds to a username character).
 
 *`binary_number_generator`*:
 
-//screen binary_number_generator
+![binary_number_generator](src/Dark_Crackme_binary_number_generator.png)
 
-The function create a sequence of 4 "1". Then start dividing the index in half until it is 0. For each iteration, starting from the bottom of the vector of "1" and going up at each iteration, if the index is odd, change the value to 0, otherwise keep 1.
+The function creates a sequence of 4 "1". Then start dividing the index in half until it is 0. For each iteration, starting from the bottom of the vector of "1" and going up at each iteration, if the index is odd, change the value to 0, otherwise keep 1.
 
-C code to generate the password:
+Let's write the resolver.
+
+Translation of "1_4m_th3_wh1t3r0s3" in binary:
+```bin
+00110001 01011111 00110100 01101101 01011111 01110100 01101000 00110011 01011111 01110111 01101000 00110001 01110100 00110011 01110010 00110000 01110011 00110011
+```
+Every caracter's even bit in vector_even[][4], odd in vector_odd[][4].
+C resolver:
 
 ```c
 #include <stdio.h>
