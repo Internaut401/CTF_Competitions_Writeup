@@ -37,11 +37,12 @@ then it calls *`binary_number_generator`* to generate 4 bits from the even chara
 
 ![binary_number_generator](src/Dark_Crackme_binary_number_generator.png)
 
-The function creates a sequence of 4 "1". Then start dividing the index in half until it is 0. For each iteration, starting from the bottom of the vector of "1" and going up at each iteration, if the index is odd, change the value to 0, otherwise keep 1.
+The function creates a sequence of 4 "1". Then starts dividing the index in half until it is 0. For each iteration, starting from the bottom of the vector of "1" and going up at each iteration, if the index is odd, changes the value to 0, otherwise keeps 1.
 
-Let's write the resolver.
+Let's write the resolver:
 
-Translation of "1_4m_th3_wh1t3r0s3" in binary:
+"1_4m_th3_wh1t3r0s3" in binary:
+
 ```bin
 00110001 01011111 00110100 01101101 01011111 01110100 01101000 00110011 01011111 01110111 01101000 00110001 01110100 00110011 01110010 00110000 01110011 00110011
 ```
