@@ -1,6 +1,6 @@
 The challenge is made up of an image with stylized men dancing.
 
-IMMAGINE
+![cipher text](images/Invitation_1.png)
 
 Searching online we found the cipher used: "dancing men".
 With: https://www.dcode.fr/dancing-men-cipher
