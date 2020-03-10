@@ -4,7 +4,7 @@ With objdump we have found a function called `get_flag`.
 00000000004005ea g     F .text	0000000000000041              get_flag
 ```
 
-Analizyng the function with gdb, we discovered the function compare the value in EDI with `0xdeadbeef`:
+Analizyng the function with gdb, we discovered the function compare the value in rdi with `0xdeadbeef`:
 ```gdb
 [marco@marco-xps139343 Desktop]$ gdb-pwndbg pwnable 
 Reading symbols from pwnable...
