@@ -105,3 +105,9 @@ p.sendline(payload)
 print(p.recvuntil('string\n').decode())
 p.interactive()
 ```
+
+# FLAG
+
+```
+utflag{thanks_for_thestring!!!!!!}
+```
