@@ -36,8 +36,8 @@ Checksec:
     PIE:      PIE enabled
 ```
 Since there is PIE we need to use the format string to leak the ret address (main+24) and use it to retrive flag function address.
-To bypass the canary is a random number wich is generated bad. 
-So the intended solution generate the same number executing the program in the same moment.
+The canary is a random number wich is bad generated. 
+So the intended solution is to generate the same number executing the program in the same moment.
 (code from https://github.com/toomanybananas/dawgctf-2020-writeups/blob/master/pwn/cookie_monster/cookie_sol.py):
 
 ```python
@@ -52,8 +52,8 @@ cookie = p32(LIBC.rand())
 
 MY solution:
 
-I noticed the number change every second. So if we open 2 connections with 2 different programs we obtain the same number. 
-We can use first program to leak the canary, pass to the second program and use the second program to leak the address and get the flag.
+I noticed the random number changes every second. So if we open 2 connections with 2 different programs we obtain the same number. 
+We can use the first program to leak the canary, pass to the second program and use the second program to leak the address and get the flag.
 
 Exploit:
 ```python
