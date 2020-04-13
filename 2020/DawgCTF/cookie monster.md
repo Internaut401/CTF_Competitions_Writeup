@@ -35,7 +35,7 @@ Checksec:
     NX:       NX enabled
     PIE:      PIE enabled
 ```
-Since there is PIE we need to use the format string to leak the ret address (main+24) and use it to retrive flag function address.
+Since there is PIE we need to use the format string to leak the ret address (main+something) and use it to retrive flag function address.
 The canary is a random number wich is bad generated. 
 So the intended solution is to generate the same number executing the program in the same moment.
 (code from https://github.com/toomanybananas/dawgctf-2020-writeups/blob/master/pwn/cookie_monster/cookie_sol.py):
