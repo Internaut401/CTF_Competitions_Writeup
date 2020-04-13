@@ -1,4 +1,4 @@
-NOTE: To solve this challenge i work with my teammate Enrico. He wrote the exploit (python 2) first and got the flag. 
+NOTE: To solve this challenge i worked with my teammate Enrico. He wrote the exploit (python 2) first and got the flag. 
 In my writeup i put an optimized exploit for python 3.
 
 Play game:
