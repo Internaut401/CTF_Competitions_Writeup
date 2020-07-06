@@ -62,11 +62,11 @@ After several tests, I found some vulnerabilities:
 
 Using the format string I read the canary and the main return address. 
 It returns to a point in the libc function '__libc_start_main'. The libc was provided to us.
-Analyzing the libc the main return address is 138135 bytes from the beginning of the libc. We can therefore calculate the libcbase a runtime. 
+Analyzing the libc, the main return address is 138135 bytes from the beginning of the libc. We can therefore calculate the libcbase a runtime. 
 In the supplied libc there are 2 one gadgets.
 
 The exploit:
-- address leak and canry
+- address leak and canary
 - libcbase calculation
 - overflow by overwriting the return address with the one gadget 
 
