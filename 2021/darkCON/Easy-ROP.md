@@ -1,4 +1,39 @@
+The given binary is statically linked and is affected by an overflow.
+```c
+int __cdecl main(int argc, const char **argv, const char **envp)
+{
+  int v3; // edx
+  int v4; // ecx
+  int v5; // er8
+  int v6; // er9
+  u32 uaddr2[16]; // [rsp+0h] [rbp-40h] BYREF
+
+  setvbuf(stdin, 0LL, 2LL, 0LL);
+  setvbuf(stdout, 0LL, 2LL, 0LL);
+  setvbuf(stderr, 0LL, 2LL, 0LL);
+  alarm(655359LL);
+  puts("Welcome to the darkcon pwn!!");
+  printf((unsigned int)"Let us know your name:", 0, v3, v4, v5, v6, uaddr2[0]);
+  return gets(uaddr2);
+}
+```
+There is a interesting function "dl_make_stack_executable" which is a wrapper to mprotect (function use to change page permission).
+```c
+unsigned int __fastcall dl_make_stack_executable(_QWORD *a1)
+{
+  unsigned int result; // eax
+
+  result = mprotect(*a1 & -dl_pagesize, dl_pagesize, (unsigned int)_stack_prot);
+  if ( result )
+    return __readfsdword(0xFFFFFFC0);
+  *a1 = 0LL;
+  dl_stack_flags |= 1u;
+  return result;
+}
+```
+We trigger the overflow in order to leak the stack address (cuz there is ASLR), then call mprotect to make stack RWX, and finally execute a shellcode injected into the stack.  
 exploit:
+
 ```python
 from pwn import *
 
