@@ -69,8 +69,8 @@ Partial Relro gives us the possibility to write in the GOT table.
 
 - Rename: write 16 characters to fill planet name and space before &data_40d0
 - Print planet name: this will leak &data_40d0 address so we can calculate addresses of exit in the GOT table and the function to execute commands
-- Rename: use the overflow to overwrite data and modify "next" poi ter with exit@got address
-- Jump: update current pointer to the next so to point at exit@got
+- Rename: use the overflow to overwrite data and modify "next" pointer with exit@got address
+- Jump: update current pointer to the next, so to point at exit@got
 - Rename: overwrite exit with the admin function to execute commands
 - exit: exit from menu and send the command to execute
 
