@@ -10,7 +10,7 @@ Protections:
     PIE:      PIE enabled
 ```
 <br>
-After submitting the password "secret_passwd_anti_bad_guys" the game is initialize and menu is unlock:
+After submitting the password "secret_passwd_anti_bad_guys" the game is initialized and menu is unlocked:
 
 ```shell
 $ ./challs
