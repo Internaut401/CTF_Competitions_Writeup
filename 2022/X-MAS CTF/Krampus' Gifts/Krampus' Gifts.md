@@ -25,7 +25,7 @@ win function:
 
 ![img/flag.png](img/flag.png)
 
-The program is a classic CTF-menù that gives us the possibility to create a gift, edit a gift, view gifts, delete a gift, exit. Maxium 10 gifts (0 to 9). Every action is directly executed by the main thread or a new thread is spawn to schedule the activity. The scheduleted functions will be executed in order by the main thread when main calls `ResolveEvents`.
+The program is a classic CTF-menu that gives us the possibility to create a gift, edit a gift, view gifts, delete a gift, exit. Maxium 10 gifts (0 to 9). Every action is directly executed by the main thread or a new thread is spawn to schedule the activity. The scheduleted functions will be executed in order by the main thread when main calls `ResolveEvents`.
 
 ![img/main.png](img/main.png)
 
